@@ -6,7 +6,7 @@ const headers = { Accept: "application/json" };
 const fetcher = async (url) => {
   const res = await fetch(url, { headers });
 
-  if (!res.ok){
+  if (!res.ok) {
     const error = new Error("An error occurred while fetching the data.");
 
     error.info = await res.json();
@@ -14,7 +14,7 @@ const fetcher = async (url) => {
     throw error;
   }
   return res.json();
-}
+};
 
 function App() {
   const url = "https://httpstat.us/200?sleep=2000";
@@ -25,14 +25,23 @@ function App() {
     if (data) {
       setStatus(data.description);
     }
-  }, [data])
+  }, [data]);
 
-  if (error) return <><p>Failed to load.</p></>;
-  if (isLoading) return <><p>Loading...</p></>;
+  if (error)
+    return (
+      <>
+        <p>Failed to load.</p>
+      </>
+    );
+  if (isLoading)
+    return (
+      <>
+        <p>Loading...</p>
+      </>
+    );
   return <>{status && <p>Status : {status}</p>}</>;
 }
 
 export default App;
-
 
 // まずはSWRを使う
