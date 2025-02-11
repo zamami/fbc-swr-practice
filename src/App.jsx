@@ -27,18 +27,22 @@ function App() {
     }
   }, [data]);
 
-  if (error)
+  if (error)　{
     return (
-      <>
-        <p>Failed to load.</p>
-      </>
+        <>
+          <p>Failed to load.</p>
+        </>
     );
-  if (isLoading)
+  }
+
+  if (isLoading) {
     return (
-      <>
-        <p>Loading...</p>
-      </>
+        <>
+          <p>Loading...</p>
+        </>
     );
+  }
+
   return <>{status && <p>Status : {status}</p>}</>;
 }
 
