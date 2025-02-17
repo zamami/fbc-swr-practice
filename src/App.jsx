@@ -27,19 +27,19 @@ function App() {
     }
   }, [data]);
 
-  if (error)　{
+  if (error) {
     return (
-        <>
-          <p>Failed to load.</p>
-        </>
+      <>
+        <p>Failed to load.</p>
+      </>
     );
   }
 
   if (isLoading) {
     return (
-        <>
-          <p>Loading...</p>
-        </>
+      <>
+        <p>Loading...</p>
+      </>
     );
   }
 
